@@ -3,6 +3,10 @@ Using the [Svelte Preprocessor to process Pug](https://github.com/sveltejs/svelt
 
 svelte-awesome-pug unfunkies it in a good way.
 
+Plans
+- Maybe create a language server extension
+- Allow Svelte statements {#if ...} and {@const ...} in a "non-recursively-indented way" (unlike +if(...))
+
 ## Install
 
 Wrap the svelte preprocessor with the awesome-pug pre and post processors 
@@ -20,7 +24,7 @@ const config = {
 ```
 
 ## Incompatibity
-I'm a [TAB] kind of guy, so I haven't supported (or thought of) space indentation yet. The code is pretty simple so feel free to make a pull-request!
+I'm a [TAB] kind of guy, so I haven't supported (or thought of) space indentation yet. The code is pretty simple so feel free to make a pull-request! Take a look at [awesome-pug-pre.js](https://github.com/Refzlund/svelte-awesome-pug/blob/master/src/lib/awesome-pug-pre.js)
 
 ## Key features
 
@@ -173,3 +177,51 @@ It removes the assigned value and indented items (relative to the commented part
 
     //- Becomes  <div class="some-div" another-attribute={...}>
 ```
+
+## Footnotes
+
+### Maybe create a language server extension
+Definitely possible, but I have a tight schedule, so that might first see the light of day in 2024.
+
+### Allow Svelte statements {#if ...} in a "non-recursively-indented way" (unlike +if(...))
+
+This
+
+```pug
+<template lang="pug">
+    {#if value > 10}
+        span Value is above 10!!🚀✨
+
+    {#if value < 10}
+        span Value is below 10
+
+</template>
+```
+
+Results in <br>
+`</template> attempted to close an element that was not opents(-1)`
+<br> ... and I personally don't want errors in my .svelte files unless there is one ...
+
+So this feature will be implemented if this gets resolved.
+
+The feature specifically will look like
+
+```
+
+    {#if value}
+        ...
+    {:else if}
+        ...
+    {:else}
+        ...
+    
+    //- Becomes
+    +if('value')
+        ...
+        +elseif('...')
+            ...
+            +else
+                ...
+```
+
+and support all {#...}
