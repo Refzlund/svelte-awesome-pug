@@ -4,8 +4,8 @@ Using the [Svelte Preprocessor to process Pug](https://github.com/sveltejs/svelt
 svelte-awesome-pug unfunkies it in a good way.
 
 Plans
-- Maybe create a language server extension
-- Allow Svelte statements {#if ...} and {@const ...} in a "non-recursively-indented way" (unlike +if(...))
+- [Maybe create a language server extension](https://github.com/Refzlund/svelte-awesome-pug#maybe-create-a-language-server-extension)
+- [Allow Svelte statements {#if ...} and {@const ...} in a "non-recursively-indented way" (unlike +if(...))](https://github.com/Refzlund/svelte-awesome-pug#allow-svelte-statements-if--in-a-non-recursively-indented-way-unlike-if)
 
 ## Install
 
