@@ -32,22 +32,24 @@ Is compatible with old-style pug. So any existing pug code shouldn't break.
 
 ### No need for != and quotes
 ```pug
-    //- Before
+    //- pug
     .some-div(on:click!='{() => ...}')
 ```
 ```pug
-    //- After
+    //- awesome-pug
     .some-div(on:click={() => ...})
 ```
 
 ### Indented components
 ```pug
+    //- Without awesome-pug
     Input.Text()
-    // Results in <Input class="Text">
+    //- Becomes  <Input class="Text">
 ```
 ```pug
+    //- With awesome-pug
     Input.Text()
-    // Results in <Input.Text>
+    // Becomes   <Input.Text>
 ```
 
 ### Spreading objects
@@ -106,7 +108,7 @@ You can't normally do
     //- "Can't use class directive on components"
 ```
 
-However, with ***svelte-awesome-pug*** we can add a space in-between AND have multiple like like so:
+However, with ***svelte-awesome-pug*** we can add a space in-between AND have multiple like so:
 ```pug
     Component(class :active :somebool)
     //- Becomes   <Component class="{active ? 'active' : ''}  {somebool ? 'somebool' : ''}">
