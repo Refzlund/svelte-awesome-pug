@@ -1,7 +1,7 @@
 # svelte-awesome-pug
 Using the [Svelte Preprocessor to process Pug](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/preprocessing.md#pug)  can look a bit funky.
 
-svelte-awesome-pug unfunkies it in a good way.
+svelte-awesome-pug unfunkies it in a good way. [Here's a video](https://youtu.be/em1i-D7IpD4?t=19) showcasing the ease of use working with svelte-awesome-pug
 
 Plans
 - [Maybe create a language server extension](https://github.com/Refzlund/svelte-awesome-pug#maybe-create-a-language-server-extension)
