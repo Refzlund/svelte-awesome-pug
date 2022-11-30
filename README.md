@@ -23,7 +23,7 @@ const config = {
     ],
 ```
 
-## Incompatibity
+## Incompatibility
 I'm a [TAB] kind of guy, so I haven't supported (or thought of) space indentation yet. The code is pretty simple so feel free to make a pull-request! Take a look at [awesome-pug-pre.js](https://github.com/Refzlund/svelte-awesome-pug/blob/master/src/lib/awesome-pug-pre.js)
 
 ## Key features
