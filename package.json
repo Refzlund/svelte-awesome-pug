@@ -1,7 +1,7 @@
 {
 	"name": "svelte-awesome-pug",
 	"description": "Enhances the usage of pug html-templates for Svelte",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

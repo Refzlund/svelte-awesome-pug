@@ -358,7 +358,7 @@ export default {
 			puginator.add(m.index + m[1].length, svelteStatementRegex.lastIndex, '')
 		}
 
-		console.log(puginator.get())
+		// console.log(puginator.get())
 		let code = content.slice(0, start) + puginator.get() + content.slice(end)
 
 		let exportKeys = Object.keys(exported)
