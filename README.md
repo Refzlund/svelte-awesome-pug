@@ -9,6 +9,10 @@ Plans
 
 ## Install
 
+```
+npm i -D svelte-awesome-pug
+```
+
 Wrap the svelte preprocessor with the awesome-pug pre and post processors 
 
 ```ts
