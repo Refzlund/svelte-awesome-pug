@@ -1,5 +1,6 @@
 {
 	"name": "svelte-awesome-pug",
+	"description": "Enhances the usage of pug html-templates for Svelte",
 	"version": "0.1.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -24,5 +25,11 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0"
 	},
-	"type": "module"
+	"type": "module",
+	"homepage": "https://github.com/Refzlund/svelte-awesome-pug",
+	"repository": "github:refzlund/svelte-awesome-pug",
+	"bugs": {
+		"url": "https://github.com/Refzlund/svelte-awesome-pug/issues"
+	},
+	"keywords": ["pug", "svelte", "preprocessor"]
 }

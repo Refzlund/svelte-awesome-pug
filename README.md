@@ -1,7 +1,7 @@
 # svelte-awesome-pug
 Using the [Svelte Preprocessor to process Pug](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/preprocessing.md#pug)  can look a bit funky.
 
-svelte-awesome-pug unfunkies it in a good way.
+svelte-awesome-pug unfunkies it in a good way. [Here's a video](https://youtu.be/em1i-D7IpD4?t=19) showcasing the ease of use working with svelte-awesome-pug
 
 Plans
 - [Maybe create a language server extension](https://github.com/Refzlund/svelte-awesome-pug#maybe-create-a-language-server-extension)
@@ -23,7 +23,7 @@ const config = {
     ],
 ```
 
-## Incompatibity
+## Incompatibility
 I'm a [TAB] kind of guy, so I haven't supported (or thought of) space indentation yet. The code is pretty simple so feel free to make a pull-request! Take a look at [awesome-pug-pre.js](https://github.com/Refzlund/svelte-awesome-pug/blob/master/src/lib/awesome-pug-pre.js)
 
 ## Key features
@@ -32,22 +32,24 @@ Is compatible with old-style pug. So any existing pug code shouldn't break.
 
 ### No need for != and quotes
 ```pug
-    //- Before
+    //- pug
     .some-div(on:click!='{() => ...}')
 ```
 ```pug
-    //- After
+    //- awesome-pug
     .some-div(on:click={() => ...})
 ```
 
 ### Indented components
 ```pug
+    //- Without awesome-pug
     Input.Text()
-    // Results in <Input class="Text">
+    //- Becomes  <Input class="Text">
 ```
 ```pug
+    //- With awesome-pug
     Input.Text()
-    // Results in <Input.Text>
+    // Becomes   <Input.Text>
 ```
 
 ### Spreading objects
@@ -106,7 +108,7 @@ You can't normally do
     //- "Can't use class directive on components"
 ```
 
-However, with ***svelte-awesome-pug*** we can add a space in-between AND have multiple like like so:
+However, with ***svelte-awesome-pug*** we can add a space in-between AND have multiple like so:
 ```pug
     Component(class :active :somebool)
     //- Becomes   <Component class="{active ? 'active' : ''}  {somebool ? 'somebool' : ''}">
