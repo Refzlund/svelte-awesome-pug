@@ -16,6 +16,17 @@
 
 <template lang="pug">
 
+	old-test(
+		"{w}" on:click!="{() => console.log('click')}" '{h}'
+		style:margin='10px'
+	)
+
+
+	testing(something={w})
+		h3(ayo={h})
+
+	simple(style :margin='25px')
+
 	wrapper
 		Input.Text.test
 		Input.Number
