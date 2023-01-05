@@ -1,13 +1,19 @@
+<script context='module' lang='ts'>
+	
+</script>
+
 <script lang="ts">
 	import Input from '$frontend/components'
 
 	import cursorEdge from '$frontend/directives/cursor-edge'
 	import drag from '$frontend/directives/drag'
 	import { writable } from 'svelte/store'
+	import Component from './component.svelte'
 	
 	const atEdge = cursorEdge.writable()
 	let w = 50
 	let h = 50
+	
 	
 </script>
 
@@ -15,6 +21,11 @@
 
 
 <template lang="pug">
+
+	Component(
+		value='33' 
+		style='color: red'
+	).someclass
 
 	old-test(
 		"{w}" on:click!="{() => console.log('click')}" '{h}'

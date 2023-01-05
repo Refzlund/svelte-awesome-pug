@@ -105,6 +105,20 @@ So..
     Component
 ```
 
+#### Exporting strings
+There are two ways to deal with exported strings:
+```pug
+    Table(export:header='Some header')
+	//- Becomes    
+	//-            let __export_header__ = ''
+	//-            Table(header='Some header {__export_header__}')
+
+	Table(export:header={'Some header'})
+    //- Becomes    
+	//-            let __export_header__ = 'Some header'
+	//-            Table(header!='{__export_header__}')
+```
+
 ### `style:` and `class:` directives
 You can't normally do
 ```pug

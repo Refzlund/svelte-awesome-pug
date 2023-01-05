@@ -1,5 +1,5 @@
 /** 
- * @type {(str: string, position: number, text: string, deleteCount: number | undefined) => string} 
+ * @type {(str: string, position: number, text: string, deleteCount?: number) => string} 
 */
 function insert(str, position, text, deleteCount = 0) {
 	return str.slice(0, position) + text + str.slice(position + deleteCount, str.length)
@@ -368,7 +368,7 @@ export default {
 
 			for (let key in exported) {
 				const defaultValue = exported[key]
-				values += `let __export_${key}__ ${typeof defaultValue === 'undefined' ? '' : `= ${defaultValue}`};\n`
+				values += `let __export_${key}__ ${typeof defaultValue === 'undefined' ? '' : `= ${defaultValue}`};`
 				exportation += `__export_${key}__ as ${key}, `
 			}
 
@@ -381,8 +381,8 @@ export default {
 				return code
 			}
 
-			const scriptEnd = /<\/script>/g
-			m = scriptEnd.exec(code)
+			const scriptStart = /(?<=<script (?!context=.module.).*?>)/g
+			m = scriptStart.exec(code)
 			index = m.index
 			if (index > 0) {
 				code = insert(code, index, `
